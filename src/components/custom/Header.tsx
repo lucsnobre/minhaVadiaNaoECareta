@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Music2 } from 'lucide-react';
 import { DarkModeToggle } from './DarkModeToggle';
@@ -17,9 +18,12 @@ export function Header() {
           <SearchBar />
         </div>
 
-        <nav className="flex items-center gap-4">
+        <nav className="flex items-center gap-2">
           <Button variant="ghost" asChild>
             <Link href="/">Início</Link>
+          </Button>
+          <Button variant="ghost" asChild>
+            <Link href="/artists">Artistas</Link>
           </Button>
           <Button variant="ghost" asChild>
             <Link href="/favorites">Favoritos</Link>

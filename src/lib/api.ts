@@ -43,8 +43,6 @@ const mockSongs: Song[] = [
   { id: 'trap7', title: 'X1', artist: 'MC Cabelinho', artistId: 'art_trap1', album: 'LITTLE HAIR', albumId: 'alb_trap1', duration: '3:00', artworkUrl: 'https://placehold.co/300x300.png', lyrics: 'Essa vida é uma guerra, X1 com o inimigo\nMas eu tô preparado, blindado e protegido...' , streamUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3'},
   { id: 'trap8', title: 'Fim de Semana no Rio', artist: 'Teto', artistId: 'art_trap4', album: 'Mateca', albumId: 'alb_teto_mateca', duration: '2:55', artworkUrl: 'https://placehold.co/300x300.png', lyrics: 'Fim de semana no Rio, copo cheio, gelo e lean\nCom as bitch jogando o bundão, ouvindo meu som, sim...' , streamUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3'},
   { id: 'trap9', title: 'Vida Chique', artist: 'Veigh', artistId: 'art_trap5', album: 'Dos Prédios Deluxe', albumId: 'alb_trap5', duration: '3:10', artworkUrl: 'https://placehold.co/300x300.png', lyrics: 'Ayy, vida chique, meu mano, eu tô bem\nComprando o que eu quero, não devo a ninguém...' , streamUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3'},
-
-  // Novas Músicas
   { id: 'song_derek_malvadao3', title: 'Malvadão 3', artist: 'Derek', artistId: 'art_derek', album: 'Malvadão 3 (Single)', albumId: 'alb_derek_malvadao3_single', duration: '3:15', artworkUrl: 'https://placehold.co/300x300.png', lyrics: 'Ela me chama de malvadão, com essa cara de vilão...', streamUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3'},
   { id: 'song_derek_porsche', title: 'Porsche', artist: 'Derek', artistId: 'art_derek', album: 'Porsche (Single)', albumId: 'alb_derek_porsche_single', duration: '2:50', artworkUrl: 'https://placehold.co/300x300.png', lyrics: 'Dentro da Porsche, fuga nos gambé, ela gosta do meu boné...', streamUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3'},
   { id: 'song_mckevin_cavalo', title: 'Cavalo de Troia', artist: 'MC Kevin', artistId: 'art_mckevin', album: 'Cavalo de Troia (Single)', albumId: 'alb_mckevin_cavalo_single', duration: '3:02', artworkUrl: 'https://placehold.co/300x300.png', lyrics: 'E aí, doutor, como é que cê tá? Mandado de segurança, eu vim buscar...', streamUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3'},
@@ -67,13 +65,18 @@ async function simulateFetch<T>(data: T, delay: number = 200): Promise<T> {
 export async function getFeaturedSongs(): Promise<Song[]> {
   console.log(`Fetching featured songs from ${API_BASE_URL}/featured-songs (mocked)`);
   const shuffled = [...mockSongs].sort(() => 0.5 - Math.random());
-  return simulateFetch(shuffled.slice(0, 8)); // Aumentado para 8 para ter mais variedade com as novas músicas
+  return simulateFetch(shuffled.slice(0, 8));
 }
 
 export async function getFeaturedAlbums(): Promise<Album[]> {
   console.log(`Fetching featured albums from ${API_BASE_URL}/featured-albums (mocked)`);
   const shuffled = [...mockAlbums].sort(() => 0.5 - Math.random());
-  return simulateFetch(shuffled.slice(0, 5)); // Aumentado para 5
+  return simulateFetch(shuffled.slice(0, 5));
+}
+
+export async function getAllArtists(): Promise<Artist[]> {
+  console.log(`Fetching all artists from ${API_BASE_URL}/artists (mocked)`);
+  return simulateFetch([...mockArtists]);
 }
 
 export async function searchItems(query: string, type?: 'songs' | 'albums' | 'artists' | 'all'): Promise<SearchResults> {
@@ -129,4 +132,3 @@ export async function getMultipleSongsByIds(ids: string[]): Promise<Song[]> {
   const songs = mockSongs.filter(song => ids.includes(song.id));
   return simulateFetch(songs);
 }
-
