@@ -16,12 +16,12 @@ export function SongCard({ song }: SongCardProps) {
       <CardHeader className="p-0 relative">
         <Link href={`/songs/${song.id}`} className="block">
           <Image
-            src={song.artworkUrl || "https://placehold.co/300x300.png?text=Sem+Arte"}
+            src={song.artworkUrl || "https://placehold.co/300x300.png"}
             alt={`Capa de ${song.title}`}
             width={300}
             height={300}
             className="w-full h-48 object-cover"
-            data-ai-hint="album cover"
+            data-ai-hint="album art"
           />
         </Link>
       </CardHeader>

@@ -15,12 +15,12 @@ export function ArtistCard({ artist }: ArtistCardProps) {
       <CardHeader className="p-0 relative">
         <Link href={`/artists/${artist.id}`} className="block">
           <Image
-            src={artist.imageUrl || "https://placehold.co/300x300.png?text=Sem+Imagem"}
+            src={artist.imageUrl || "https://placehold.co/300x300.png"}
             alt={`Imagem de ${artist.name}`}
             width={300}
             height={300}
             className="w-full h-48 object-cover"
-            data-ai-hint="artist portrait"
+            data-ai-hint="artist photo"
           />
         </Link>
       </CardHeader>

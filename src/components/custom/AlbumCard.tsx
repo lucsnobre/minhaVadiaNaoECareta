@@ -15,12 +15,12 @@ export function AlbumCard({ album }: AlbumCardProps) {
       <CardHeader className="p-0 relative">
         <Link href={`/albums/${album.id}`} className="block">
           <Image
-            src={album.artworkUrl || "https://placehold.co/300x300.png?text=Sem+Arte"}
+            src={album.artworkUrl || "https://placehold.co/300x300.png"}
             alt={`Capa de ${album.title}`}
             width={300}
             height={300}
             className="w-full h-48 object-cover"
-            data-ai-hint="album cover"
+            data-ai-hint="album art"
           />
         </Link>
       </CardHeader>

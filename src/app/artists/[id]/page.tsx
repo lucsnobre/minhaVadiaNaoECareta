@@ -31,7 +31,7 @@ export default async function ArtistPage({ params }: ArtistPageProps) {
         <div className="md:flex">
           <div className="md:w-1/4 relative">
             <Image
-              src={artist.imageUrl || "https://placehold.co/400x400.png?text=Sem+Imagem"}
+              src={artist.imageUrl || "https://placehold.co/400x400.png"}
               alt={`Imagem de ${artist.name}`}
               width={400}
               height={400}

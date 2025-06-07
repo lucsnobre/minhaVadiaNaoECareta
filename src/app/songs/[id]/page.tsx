@@ -31,12 +31,12 @@ export default async function SongPage({ params }: SongPageProps) {
         <div className="md:flex">
           <div className="md:w-1/3 relative">
             <Image
-              src={song.artworkUrl || "https://placehold.co/400x400.png?text=Sem+Arte"}
+              src={song.artworkUrl || "https://placehold.co/400x400.png"}
               alt={`Capa de ${song.title}`}
               width={400}
               height={400}
               className="w-full h-auto md:h-full object-cover"
-              data-ai-hint="album cover song"
+              data-ai-hint="album art"
             />
           </div>
           <div className="md:w-2/3">
