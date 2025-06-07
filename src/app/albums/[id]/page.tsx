@@ -18,9 +18,9 @@ export default async function AlbumPage({ params }: AlbumPageProps) {
     return (
       <div className="flex flex-col items-center justify-center text-center py-10">
         <AlertTriangle className="h-16 w-16 text-destructive mb-4" />
-        <h1 className="font-headline text-2xl font-bold">Album Not Found</h1>
-        <p className="text-muted-foreground">The album you are looking for does not exist or could not be loaded.</p>
-        <Link href="/" className="mt-4 text-primary hover:underline">Go back to Home</Link>
+        <h1 className="font-headline text-2xl font-bold">Álbum Não Encontrado</h1>
+        <p className="text-muted-foreground">O álbum que você está procurando não existe ou não pôde ser carregado.</p>
+        <Link href="/" className="mt-4 text-primary hover:underline">Voltar para a Página Inicial</Link>
       </div>
     );
   }
@@ -31,8 +31,8 @@ export default async function AlbumPage({ params }: AlbumPageProps) {
         <div className="md:flex">
           <div className="md:w-1/3 relative">
             <Image
-              src={album.artworkUrl || "https://placehold.co/400x400.png?text=No+Art"}
-              alt={`Artwork for ${album.title}`}
+              src={album.artworkUrl || "https://placehold.co/400x400.png?text=Sem+Arte"}
+              alt={`Capa do ${album.title}`}
               width={400}
               height={400}
               className="w-full h-auto md:h-full object-cover"
@@ -43,17 +43,17 @@ export default async function AlbumPage({ params }: AlbumPageProps) {
             <CardHeader>
               <CardTitle className="font-headline text-3xl md:text-4xl">{album.title}</CardTitle>
               <CardDescription className="text-lg text-muted-foreground">
-                By <Link href={`/artists/${album.artistId || '#'}`} className="hover:underline text-primary">{album.artist}</Link>
+                Por <Link href={`/artists/${album.artistId || '#'}`} className="hover:underline text-primary">{album.artist}</Link>
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
               <div className="flex items-center text-sm">
                 <CalendarDays className="h-4 w-4 mr-2 text-primary" />
-                <span>Released: {album.releaseDate}</span>
+                <span>Lançado em: {album.releaseDate}</span>
               </div>
               <div className="flex items-center text-sm">
                 <ListMusic className="h-4 w-4 mr-2 text-primary" />
-                <span>{album.songs.length} track{album.songs.length === 1 ? '' : 's'}</span>
+                <span>{album.songs.length} faixa{album.songs.length === 1 ? '' : 's'}</span>
               </div>
             </CardContent>
           </div>
@@ -62,18 +62,18 @@ export default async function AlbumPage({ params }: AlbumPageProps) {
 
       <Card>
         <CardHeader>
-          <CardTitle className="font-headline text-2xl">Tracklist</CardTitle>
+          <CardTitle className="font-headline text-2xl">Lista de Faixas</CardTitle>
         </CardHeader>
         <CardContent>
           {album.songs && album.songs.length > 0 ? (
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-[50px]">#</TableHead>
-                  <TableHead>Title</TableHead>
-                  <TableHead className="hidden md:table-cell">Artist</TableHead>
-                  <TableHead className="text-right">Duration</TableHead>
-                  <TableHead className="text-right w-[80px]">Favorite</TableHead>
+                  <TableHead className="w-[50px]">Nº</TableHead>
+                  <TableHead>Título</TableHead>
+                  <TableHead className="hidden md:table-cell">Artista</TableHead>
+                  <TableHead className="text-right">Duração</TableHead>
+                  <TableHead className="text-right w-[80px]">Favoritar</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -95,7 +95,7 @@ export default async function AlbumPage({ params }: AlbumPageProps) {
               </TableBody>
             </Table>
           ) : (
-            <p className="text-muted-foreground">No tracks found for this album.</p>
+            <p className="text-muted-foreground">Nenhuma faixa encontrada para este álbum.</p>
           )}
         </CardContent>
       </Card>
@@ -106,10 +106,10 @@ export default async function AlbumPage({ params }: AlbumPageProps) {
 export async function generateMetadata({ params }: AlbumPageProps) {
   const album = await getAlbumById(params.id);
   if (!album) {
-    return { title: 'Album Not Found' };
+    return { title: 'Álbum Não Encontrado' };
   }
   return {
-    title: `${album.title} - ${album.artist} | TuneFlow`,
-    description: `Details and tracklist for the album ${album.title} by ${album.artist}.`,
+    title: `${album.title} - ${album.artist} | HarmoniQ`,
+    description: `Detalhes e lista de faixas do álbum ${album.title} por ${album.artist}.`,
   };
 }

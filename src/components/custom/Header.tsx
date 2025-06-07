@@ -10,7 +10,7 @@ export function Header() {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Music2 className="h-7 w-7 text-primary" />
-          <span className="font-headline text-2xl font-bold text-primary">TuneFlow</span>
+          <span className="font-headline text-2xl font-bold text-primary">HarmoniQ</span>
         </Link>
         
         <div className="flex-1 mx-4 md:mx-8 max-w-md">
@@ -19,10 +19,10 @@ export function Header() {
 
         <nav className="flex items-center gap-4">
           <Button variant="ghost" asChild>
-            <Link href="/">Home</Link>
+            <Link href="/">Início</Link>
           </Button>
           <Button variant="ghost" asChild>
-            <Link href="/favorites">Favorites</Link>
+            <Link href="/favorites">Favoritos</Link>
           </Button>
           <DarkModeToggle />
         </nav>

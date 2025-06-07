@@ -23,10 +23,10 @@ export function FavoriteButton({ songId }: FavoriteButtonProps) {
   const toggleFavorite = () => {
     if (isFavorited) {
       removeFavorite(songId);
-      toast({ title: "Removed from favorites", variant: "default" });
+      toast({ title: "Removida dos favoritos", variant: "default" });
     } else {
       addFavorite(songId);
-      toast({ title: "Added to favorites", variant: "default" });
+      toast({ title: "Adicionada aos favoritos", variant: "default" });
     }
   };
 
@@ -36,7 +36,7 @@ export function FavoriteButton({ songId }: FavoriteButtonProps) {
       size="icon"
       onClick={toggleFavorite}
       className={cn("w-8 h-8 hover:bg-accent/20", isFavorited ? "text-accent" : "text-muted-foreground hover:text-accent")}
-      aria-label={isFavorited ? "Remove from favorites" : "Add to favorites"}
+      aria-label={isFavorited ? "Remover dos favoritos" : "Adicionar aos favoritos"}
     >
       <Heart className={cn("h-4 w-4", isFavorited && "fill-current")} />
     </Button>

@@ -30,7 +30,7 @@ function SearchResultsContent() {
           setResults(data);
         } catch (e) {
           console.error("Search failed:", e);
-          setError("Failed to fetch search results. Please try again.");
+          setError("Falha ao buscar resultados. Por favor, tente novamente.");
         } finally {
           setIsLoading(false);
         }
@@ -42,7 +42,7 @@ function SearchResultsContent() {
   }, [query]);
 
   if (!query) {
-    return <p className="text-muted-foreground text-center py-8">Enter a search term to find music.</p>;
+    return <p className="text-muted-foreground text-center py-8">Digite um termo de busca para encontrar músicas.</p>;
   }
 
   if (isLoading) {
@@ -50,21 +50,21 @@ function SearchResultsContent() {
   }
 
   if (error) {
-    return <ErrorMessage message={error} />;
+    return <ErrorMessage title="Erro na Busca" message={error} />;
   }
 
   if (!results || (results.songs.length === 0 && results.albums.length === 0 && results.artists.length === 0)) {
-    return <p className="text-muted-foreground text-center py-8">No results found for "{query}".</p>;
+    return <p className="text-muted-foreground text-center py-8">Nenhum resultado encontrado para "{query}".</p>;
   }
 
   return (
     <div className="space-y-8">
-      <h1 className="font-headline text-3xl font-bold">Search Results for "{query}"</h1>
+      <h1 className="font-headline text-3xl font-bold">Resultados da Busca por "{query}"</h1>
       <Tabs defaultValue="songs" className="w-full">
         <TabsList className="grid w-full grid-cols-3 mb-6">
-          <TabsTrigger value="songs" disabled={results.songs.length === 0}>Songs ({results.songs.length})</TabsTrigger>
-          <TabsTrigger value="albums" disabled={results.albums.length === 0}>Albums ({results.albums.length})</TabsTrigger>
-          <TabsTrigger value="artists" disabled={results.artists.length === 0}>Artists ({results.artists.length})</TabsTrigger>
+          <TabsTrigger value="songs" disabled={results.songs.length === 0}>Músicas ({results.songs.length})</TabsTrigger>
+          <TabsTrigger value="albums" disabled={results.albums.length === 0}>Álbuns ({results.albums.length})</TabsTrigger>
+          <TabsTrigger value="artists" disabled={results.artists.length === 0}>Artistas ({results.artists.length})</TabsTrigger>
         </TabsList>
         
         <TabsContent value="songs">
@@ -75,7 +75,7 @@ function SearchResultsContent() {
               ))}
             </div>
           ) : (
-            <p className="text-muted-foreground text-center py-4">No songs found.</p>
+            <p className="text-muted-foreground text-center py-4">Nenhuma música encontrada.</p>
           )}
         </TabsContent>
         
@@ -87,7 +87,7 @@ function SearchResultsContent() {
               ))}
             </div>
           ) : (
-            <p className="text-muted-foreground text-center py-4">No albums found.</p>
+            <p className="text-muted-foreground text-center py-4">Nenhum álbum encontrado.</p>
           )}
         </TabsContent>
 
@@ -99,7 +99,7 @@ function SearchResultsContent() {
               ))}
             </div>
           ) : (
-            <p className="text-muted-foreground text-center py-4">No artists found.</p>
+            <p className="text-muted-foreground text-center py-4">Nenhum artista encontrado.</p>
           )}
         </TabsContent>
       </Tabs>

@@ -16,8 +16,8 @@ export function SongCard({ song }: SongCardProps) {
       <CardHeader className="p-0 relative">
         <Link href={`/songs/${song.id}`} className="block">
           <Image
-            src={song.artworkUrl || "https://placehold.co/300x300.png?text=No+Art"}
-            alt={`Artwork for ${song.title}`}
+            src={song.artworkUrl || "https://placehold.co/300x300.png?text=Sem+Arte"}
+            alt={`Capa de ${song.title}`}
             width={300}
             height={300}
             className="w-full h-48 object-cover"
@@ -39,7 +39,7 @@ export function SongCard({ song }: SongCardProps) {
         <Button variant="ghost" size="sm" asChild>
           <Link href={`/songs/${song.id}`}>
             <PlayCircle className="mr-2 h-4 w-4" />
-            Details
+            Detalhes
           </Link>
         </Button>
         <FavoriteButton songId={song.id} />

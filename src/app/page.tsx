@@ -17,7 +17,7 @@ export default async function HomePage() {
     ]);
   } catch (e) {
     console.error("Failed to fetch featured content:", e);
-    error = "Could not load featured content. Please try again later.";
+    error = "Não foi possível carregar o conteúdo em destaque. Por favor, tente novamente mais tarde.";
     // In a real app, you might want to log this error to a monitoring service
   }
 
@@ -29,7 +29,7 @@ export default async function HomePage() {
     <div className="space-y-12">
       <section>
         <h1 className="font-headline text-3xl md:text-4xl font-bold mb-6 text-primary">
-          Featured Songs
+          Músicas em Destaque
         </h1>
         {featuredSongs.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -38,7 +38,7 @@ export default async function HomePage() {
             ))}
           </div>
         ) : (
-          <p className="text-muted-foreground">No featured songs available at the moment.</p>
+          <p className="text-muted-foreground">Nenhuma música em destaque disponível no momento.</p>
         )}
       </section>
 
@@ -46,7 +46,7 @@ export default async function HomePage() {
 
       <section>
         <h2 className="font-headline text-3xl md:text-4xl font-bold mb-6 text-primary">
-          Featured Albums
+          Álbuns em Destaque
         </h2>
         {featuredAlbums.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -55,7 +55,7 @@ export default async function HomePage() {
             ))}
           </div>
         ) : (
-          <p className="text-muted-foreground">No featured albums available at the moment.</p>
+          <p className="text-muted-foreground">Nenhum álbum em destaque disponível no momento.</p>
         )}
       </section>
     </div>

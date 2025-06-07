@@ -26,7 +26,7 @@ function FavoritesContent() {
             setFavoriteSongs(songs);
           } catch (e) {
             console.error("Failed to fetch favorite songs:", e);
-            setError("Could not load your favorite songs. Please try again later.");
+            setError("Não foi possível carregar suas músicas favoritas. Por favor, tente novamente mais tarde.");
           } finally {
             setIsLoading(false);
           }
@@ -44,16 +44,16 @@ function FavoritesContent() {
   }
 
   if (error) {
-    return <ErrorMessage message={error} />;
+    return <ErrorMessage title="Erro" message={error} />;
   }
 
   if (favoriteSongs.length === 0) {
     return (
       <div className="text-center py-10">
         <HeartOff className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-        <h1 className="font-headline text-2xl font-bold mb-2">No Favorites Yet</h1>
+        <h1 className="font-headline text-2xl font-bold mb-2">Nenhum Favorito Ainda</h1>
         <p className="text-muted-foreground">
-          Start exploring and add some songs to your favorites!
+          Comece a explorar e adicione algumas músicas aos seus favoritos!
         </p>
       </div>
     );
@@ -61,7 +61,7 @@ function FavoritesContent() {
 
   return (
     <div className="space-y-8">
-      <h1 className="font-headline text-3xl font-bold">Your Favorite Songs</h1>
+      <h1 className="font-headline text-3xl font-bold">Suas Músicas Favoritas</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {favoriteSongs.map((song) => (
           <SongCard key={song.id} song={song} />
@@ -82,6 +82,6 @@ export default function FavoritesPage() {
 }
 
 export const metadata = {
-  title: 'Your Favorites | TuneFlow',
-  description: 'View and manage your favorite songs on TuneFlow.',
+  title: 'Seus Favoritos | HarmoniQ',
+  description: 'Veja e gerencie suas músicas favoritas no HarmoniQ.',
 };

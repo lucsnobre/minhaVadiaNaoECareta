@@ -15,8 +15,8 @@ export function ArtistCard({ artist }: ArtistCardProps) {
       <CardHeader className="p-0 relative">
         <Link href={`/artists/${artist.id}`} className="block">
           <Image
-            src={artist.imageUrl || "https://placehold.co/300x300.png?text=No+Image"}
-            alt={`Image of ${artist.name}`}
+            src={artist.imageUrl || "https://placehold.co/300x300.png?text=Sem+Imagem"}
+            alt={`Imagem de ${artist.name}`}
             width={300}
             height={300}
             className="w-full h-48 object-cover"
@@ -34,7 +34,7 @@ export function ArtistCard({ artist }: ArtistCardProps) {
         <Button variant="ghost" size="sm" asChild className="w-full justify-start">
           <Link href={`/artists/${artist.id}`}>
             <UserCircle className="mr-2 h-4 w-4" />
-            View Artist
+            Ver Artista
           </Link>
         </Button>
       </CardFooter>

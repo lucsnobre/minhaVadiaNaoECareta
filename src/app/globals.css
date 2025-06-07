@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 251 17% 13%;
 
-    --primary: 276 69% 61%; /* Vibrant Purple #9D4EDD */
+    --primary: 205 70% 50%; /* Aero Blue Light */
     --primary-foreground: 0 0% 100%; /* White */
 
     --secondary: 0 0% 90%; /* Lighter Gray */
@@ -22,17 +22,17 @@
     --muted: 0 0% 90%;
     --muted-foreground: 0 0% 40%; /* Darker Gray Text */
 
-    --accent: 330 92% 53%; /* Lively Pink #F72585 */
-    --accent-foreground: 0 0% 100%; /* White */
+    --accent: 195 80% 60%; /* Aero Accent Light Blue */
+    --accent-foreground: 251 17% 13%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 85%;
     --input: 0 0% 85%;
-    --ring: 276 69% 61%; /* Vibrant Purple for focus rings */
+    --ring: 205 70% 50%; /* Aero Blue Light for focus rings */
 
-    --radius: 0.5rem;
+    --radius: 0.5rem; /* Consistent with Windows 7/Vista rounded corners */
 
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
@@ -42,39 +42,39 @@
   }
 
   .dark {
-    --background: 251 17% 13%; /* Dark Desaturated Purple #1E1B29 */
-    --foreground: 0 0% 98%; /* Whiteish Text */
+    --background: 220 30% 10%; /* Dark Aero Blue/Gray Background */
+    --foreground: 210 25% 95%; /* Off-White/Light Cool Gray Text */
 
-    --card: 251 17% 18%; /* Slightly Lighter Dark Purple */
-    --card-foreground: 0 0% 98%;
+    --card: 220 25% 16%; /* Slightly Lighter Dark Aero Blue/Gray for Cards */
+    --card-foreground: 210 25% 95%;
 
-    --popover: 251 17% 13%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 220 25% 13%; /* Darker for Popovers */
+    --popover-foreground: 210 25% 95%;
 
-    --primary: 276 69% 61%; /* Vibrant Purple #9D4EDD */
-    --primary-foreground: 0 0% 100%;
+    --primary: 205 85% 55%; /* Vibrant Aero Blue (like Win7 title bars) */
+    --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 251 17% 22%; /* Darker Shade for Secondary Elements */
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 220 20% 22%; /* Medium Dark Desaturated Blue */
+    --secondary-foreground: 210 20% 85%; /* Lighter Gray */
 
-    --muted: 251 17% 25%;
-    --muted-foreground: 0 0% 60%; /* Lighter Gray Text */
+    --muted: 220 15% 28%;
+    --muted-foreground: 210 15% 65%; /* Medium Gray for less important text */
 
-    --accent: 330 92% 53%; /* Lively Pink #F72585 */
-    --accent-foreground: 0 0% 100%;
+    --accent: 195 100% 60%; /* Lighter, Glowing Cyan/Blue for Accents */
+    --accent-foreground: 220 30% 10%; /* Dark text on light accent */
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 70% 50%; /* Softer Red for Dark Mode */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 251 17% 25%;
-    --input: 251 17% 25%;
-    --ring: 276 69% 61%; /* Vibrant Purple for focus rings */
+    --border: 220 20% 25%; /* Subtle Border, slightly lighter than card */
+    --input: 220 20% 20%; /* Dark Input Background */
+    --ring: 205 85% 55%; /* Primary Aero Blue for focus rings */
 
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --chart-1: 205 70% 60%;
+    --chart-2: 180 60% 55%;
+    --chart-3: 220 50% 70%;
+    --chart-4: 30 80% 65%;
+    --chart-5: 340 75% 65%;
   }
 }
 

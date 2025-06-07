@@ -21,13 +21,13 @@ export function SearchBar() {
     <form onSubmit={handleSubmit} className="flex w-full items-center space-x-2">
       <Input
         type="text"
-        placeholder="Search songs, artists, albums..."
+        placeholder="Buscar músicas, artistas, álbuns..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         className="flex-grow"
-        aria-label="Search"
+        aria-label="Buscar"
       />
-      <Button type="submit" size="icon" aria-label="Submit search">
+      <Button type="submit" size="icon" aria-label="Enviar busca">
         <Search className="h-4 w-4" />
       </Button>
     </form>
