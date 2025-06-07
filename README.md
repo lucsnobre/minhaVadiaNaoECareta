@@ -1,59 +1,107 @@
-# 🎶 HarmoniQ - Seu Universo Musical Brasileiro 🇧🇷
 
-Bem-vindo ao HarmoniQ! Um protótipo de plataforma de streaming de música focado em proporcionar uma experiência imersiva no vibrante cenário do trap brasileiro e outros gêneros nacionais. Explore, descubra e curta seus artistas e músicas favoritas com uma interface inspirada na estética nostálgica "dark aero".
+# 🎶 HarmoniQ - Protótipo de Streaming de Música 🎶
 
-![Placeholder da Tela Inicial do HarmoniQ](https://placehold.co/800x400.png "Tela Inicial do HarmoniQ exibindo músicas e álbuns em destaque")
-*Uma prévia da página inicial do HarmoniQ no tema Dark Aero.*
+**Projeto do Curso de Desenvolvimento de Sistemas - SENAI Jandira**
 
-## ✨ Recursos Principais
+Bem-vindo ao HarmoniQ! Este é um protótipo de uma plataforma de streaming de música, desenvolvido como parte do curso de Desenvolvimento de Sistemas do SENAI Jandira. O objetivo foi criar uma experiência de usuário agradável e funcional, explorando o vibrante cenário do trap brasileiro e outros gêneros nacionais, tudo isso com uma interface inspirada na estética nostálgica "dark aero".
 
-O HarmoniQ foi construído pensando em você. Aqui estão alguns dos recursos que você pode aproveitar:
+## ✨ Visão Geral do Projeto
 
-### 🎤 Descubra Músicas e Artistas
-Navegue por músicas e álbuns em destaque diretamente na página inicial. Use nossa busca poderosa para encontrar exatamente o que você procura, seja uma música, um álbum ou seu artista favorito.
+O HarmoniQ nasceu da ideia de aplicar os conhecimentos adquiridos em sala de aula em um projeto prático e envolvente. A plataforma permite aos usuários (simulados) navegar por músicas, álbuns e artistas, descobrir novos sons, favoritar suas faixas preferidas e desfrutar de uma interface com um toque retrô moderno.
 
-![Placeholder da Página de Busca](https://placehold.co/700x350.png "Página de busca do HarmoniQ com resultados para 'trap'")
-*Encontre facilmente o que você quer ouvir.*
+### 📸 Algumas Telas do HarmoniQ (Conceitual)
 
-### 👤 Páginas Detalhadas
-Mergulhe fundo nas informações:
-*   **Músicas:** Veja a capa, ouça um trecho (quando disponível), leia a letra e adicione aos seus favoritos.
-*   **Álbuns:** Explore a lista de faixas, veja a arte do álbum e informações de lançamento.
-*   **Artistas:** Conheça mais sobre seus artistas preferidos, veja seus álbuns e músicas mais populares.
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://placehold.co/600x400.png" alt="Tela Inicial do HarmoniQ com músicas e álbuns em destaque" data-ai-hint="homepage screenshot" />
+      <br />
+      <em>Página Inicial com destaques</em>
+    </td>
+    <td align="center">
+      <img src="https://placehold.co/600x400.png" alt="Página de um artista no HarmoniQ mostrando sua foto, biografia e músicas" data-ai-hint="artist page screenshot" />
+      <br />
+      <em>Página de Detalhes de um Artista</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://placehold.co/600x400.png" alt="Página de busca do HarmoniQ com resultados para 'trap'" data-ai-hint="search results screenshot" />
+      <br />
+      <em>Resultados da Busca</em>
+    </td>
+    <td align="center">
+      <img src="https://placehold.co/600x400.png" alt="Página de Favoritos do HarmoniQ" data-ai-hint="favorites page screenshot" />
+      <br />
+      <em>Suas Músicas Favoritas</em>
+    </td>
+  </tr>
+</table>
 
-![Placeholder da Página de um Artista](https://placehold.co/700x350.png "Página de detalhes de um artista mostrando sua foto, biografia e músicas")
-*Explore a discografia e biografia dos artistas.*
+## 🚀 Recursos Implementados
 
-### ❤️ Favoritos Personalizados
-Marque suas músicas preferidas com o botão de coração e acesse todas elas facilmente na sua página de Favoritos. Sua trilha sonora pessoal, sempre à mão.
+O HarmoniQ foi construído pensando em funcionalidades essenciais para uma plataforma de música:
 
-### 🎨 Estética Dark Aero
-Desfrute de uma interface com um toque nostálgico e elegante, inspirada no design "Aero" do Windows 7/Vista, com um tema escuro predominante que é agradável aos olhos.
+*   **Navegação Intuitiva:** Explore músicas e álbuns em destaque na página inicial.
+*   **Busca Abrangente:** Encontre músicas, álbuns ou artistas específicos.
+*   **Páginas Detalhadas:**
+    *   **Músicas:** Veja a capa, informações, ouça um trecho (simulado) e adicione aos favoritos.
+    *   **Álbuns:** Explore a lista de faixas, arte do álbum e data de lançamento.
+    *   **Artistas:** Conheça mais sobre os artistas, veja seus álbuns e músicas.
+    *   **Lista de Artistas:** Uma página dedicada para navegar por todos os artistas cadastrados.
+*   **Favoritos Personalizados:** Marque suas músicas preferidas e acesse-as facilmente.
+*   **Estética Dark Aero:** Uma interface com um design elegante e nostálgico, inspirado no Windows 7/Vista, com um tema escuro predominante.
+*   **Conteúdo em Português (BR):** Toda a plataforma traduzida para o nosso idioma.
+*   **Foco no Trap Brasileiro:** A biblioteca de música (simulada) destaca artistas renomados do trap nacional.
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Como Foi Feito: O Processo de Desenvolvimento
 
-O HarmoniQ é construído com um conjunto de tecnologias modernas e eficientes:
+Este projeto foi desenvolvido de forma iterativa, com um foco grande na prototipagem rápida e na experiência do usuário. Uma parte significativa do desenvolvimento contou com a colaboração de uma **IA Assistente de Prototipagem (App Prototyper do Firebase Studio)**, que auxiliou nas seguintes etapas:
 
-*   **Next.js:** Para uma renderização rápida e eficiente no lado do servidor e do cliente.
-*   **React:** Para construir interfaces de usuário dinâmicas e reutilizáveis.
-*   **TypeScript:** Para um código mais robusto e com menos erros.
-*   **Tailwind CSS:** Para estilização ágil e customizável.
-*   **ShadCN UI:** Biblioteca de componentes UI pré-construídos e acessíveis.
-*   **Genkit:** Para futuras integrações com inteligência artificial (configuração inicial pronta).
-*   **Lucide Icons:** Para ícones vetoriais leves e bonitos.
+1.  **Configuração Inicial:** Estruturação do projeto com Next.js e TypeScript.
+2.  **Identidade Visual e UX:**
+    *   Definição do nome "HarmoniQ".
+    *   Tradução completa para Português (BR).
+    *   Implementação do tema "Dark Aero", ajustando cores e estilos em `src/app/globals.css` e componentes ShadCN.
+3.  **Construção do Catálogo Musical (Mock Data):**
+    *   Criação de uma biblioteca de músicas, álbuns e artistas em `src/lib/api.ts`, com foco inicial no Trap Brasileiro (MC Cabelinho, Matuê, Alee, Teto, Veigh, Derek, MC Kevin, MC Paiva ZS, TZ da Coronel).
+    *   Refinamento dos dados para garantir maior precisão nas informações (associação correta entre músicas e álbuns, etc.).
+    *   Padronização do uso de imagens placeholder (`https://placehold.co/WIDTHxHEIGHT.png`) com atributos `data-ai-hint` para contexto.
+4.  **Desenvolvimento das Páginas e Componentes:**
+    *   Criação das rotas e páginas principais usando o App Router do Next.js (Home, Artistas, Álbuns, Músicas, Busca, Favoritos).
+    *   Desenvolvimento de componentes reutilizáveis (`SongCard`, `AlbumCard`, `ArtistCard`, `Header`, `Footer`, `SearchBar`, `FavoriteButton`).
+5.  **Funcionalidades Essenciais:**
+    *   Implementação da lógica de busca e exibição de resultados.
+    *   Criação do sistema de favoritos utilizando `localStorage` através do hook `useFavorites`.
 
-## 🚀 Como Começar (Desenvolvimento Local)
+A colaboração com a IA permitiu agilizar a escrita de código, a refatoração e a implementação de novas funcionalidades de forma conversacional e intuitiva.
 
-Para rodar o HarmoniQ na sua máquina local:
+## 💻 Tecnologias Utilizadas
+
+O HarmoniQ é construído com um conjunto de tecnologias modernas e eficientes, amplamente utilizadas no mercado:
+
+*   **Next.js (v15+):** Framework React para desenvolvimento web moderno, com foco em performance e experiência do desenvolvedor (utilizando o App Router).
+*   **React (v18+):** Biblioteca JavaScript para construir interfaces de usuário dinâmicas e componentizadas.
+*   **TypeScript:** Superset do JavaScript que adiciona tipagem estática, aumentando a robustez e a manutenibilidade do código.
+*   **Tailwind CSS:** Framework CSS utility-first para estilização rápida e customizável.
+*   **ShadCN UI:** Coleção de componentes de UI reutilizáveis, acessíveis e estilizados com Tailwind CSS, que serviram de base para a interface.
+*   **Genkit (Google AI):** Toolkit para desenvolvimento de funcionalidades com IA generativa. A configuração inicial (`src/ai/genkit.ts`) está pronta para futuras integrações, como recomendações personalizadas.
+*   **Lucide Icons:** Biblioteca de ícones vetoriais leves e consistentes.
+*   **LocalStorage:** Para persistência dos dados de favoritos no navegador do usuário.
+
+## 🚀 Como Executar o Projeto Localmente
+
+Para rodar o HarmoniQ na sua máquina:
 
 1.  **Clone o repositório:**
     ```bash
-    # (Se você ainda não clonou, substitua pela URL correta do seu repositório)
-    git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
-    cd SEU_REPOSITORIO
+    # Substitua pela URL correta se estiver em outro local
+    git clone https://github.com/lucsnobre/FrontAPIMusica.git
+    cd FrontAPIMusica
     ```
 
 2.  **Instale as dependências:**
+    Certifique-se de ter o Node.js e o npm (ou Yarn) instalados.
     ```bash
     npm install
     # ou
@@ -61,7 +109,7 @@ Para rodar o HarmoniQ na sua máquina local:
     ```
 
 3.  **Configure a API (Opcional):**
-    O HarmoniQ usa dados mock por padrão. Se você tiver uma API real, configure a variável de ambiente `NEXT_PUBLIC_MUSIC_API_URL`. Veja as instruções em `CONFIG.md`.
+    O HarmoniQ usa dados mockados por padrão (`src/lib/api.ts`). Se você tiver uma API real, configure a variável de ambiente `NEXT_PUBLIC_MUSIC_API_URL`. Veja as instruções em `CONFIG.md`.
 
 4.  **Rode o servidor de desenvolvimento:**
     ```bash
@@ -71,17 +119,19 @@ Para rodar o HarmoniQ na sua máquina local:
     ```
     Abra [http://localhost:9002](http://localhost:9002) (ou a porta indicada no seu terminal) no seu navegador para ver o resultado.
 
-## 🔮 Futuras Ideias
+## 🧠 Aprendizados e Desafios
 
-*   Integração real com API de música.
-*   Playlists personalizadas e colaborativas.
-*   Recomendações de música com Genkit AI.
-*   Player de música completo com fila de reprodução.
+Durante o desenvolvimento do HarmoniQ, alguns aprendizados e desafios se destacaram:
 
-##🤝 Contribuindo
+*   **Gerenciamento de Estado no Cliente:** A implementação dos favoritos com `localStorage` e a sincronização do estado entre componentes.
+*   **Estruturação de Dados:** Organizar e simular uma API de música de forma coesa.
+*   **Estilização Consistente:** Manter a estética "Dark Aero" em todos os componentes e páginas.
+*   **Colaboração com IA:** Explorar as capacidades de uma IA assistente para acelerar o desenvolvimento e aprender novas abordagens.
 
-Este é um projeto em desenvolvimento. Sinta-se à vontade para explorar o código, sugerir melhorias ou reportar issues!
+## 🙏 Agradecimentos
+
+Este projeto é um reflexo do aprendizado e dedicação durante o curso de Desenvolvimento de Sistemas no **SENAI Jandira**. Um agradecimento especial aos instrutores e colegas pelo apoio e conhecimento compartilhado.
 
 ---
 
-*Este README foi gerado para auxiliar na compreensão e desenvolvimento do projeto HarmoniQ.*
+*Este README foi elaborado para documentar o projeto HarmoniQ, desenvolvido para fins educacionais.*
