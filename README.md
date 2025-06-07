@@ -16,7 +16,7 @@ O HarmoniQ nasceu da ideia de aplicar os conhecimentos adquiridos em sala de aul
     <td align="center">
       <img src="https://placehold.co/600x400.png" alt="Tela Inicial do HarmoniQ com músicas e álbuns em destaque" data-ai-hint="homepage screenshot" />
       <br />
-      <em>Página Inicial com destaques</em>
+      <em>Página Inicial do site</em>
     </td>
     <td align="center">
       <img src="https://placehold.co/600x400.png" alt="Página de um artista no HarmoniQ mostrando sua foto, biografia e músicas" data-ai-hint="artist page screenshot" />
