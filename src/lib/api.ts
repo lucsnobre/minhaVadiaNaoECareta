@@ -1,90 +1,105 @@
+
 import type { Song, Album, Artist, SearchResults } from './types';
 import { API_BASE_URL } from './constants';
 
-// MOCK DATA - Replace with actual API calls
+// MOCK DATA - Trap Brasileiro
 
-const mockSongs: Song[] = [
-  { id: '1', title: 'Bohemian Rhapsody', artist: 'Queen', album: 'A Night at the Opera', duration: '5:55', artworkUrl: 'https://placehold.co/300x300.png?text=Song1', lyrics: 'Is this the real life? Is this just fantasy?...' },
-  { id: '2', title: 'Stairway to Heaven', artist: 'Led Zeppelin', album: 'Led Zeppelin IV', duration: '8:02', artworkUrl: 'https://placehold.co/300x300.png?text=Song2' },
-  { id: '3', title: 'Shape of You', artist: 'Ed Sheeran', album: '÷ (Divide)', duration: '3:53', artworkUrl: 'https://placehold.co/300x300.png?text=Song3' },
-  { id: '4', title: 'Blinding Lights', artist: 'The Weeknd', album: 'After Hours', duration: '3:20', artworkUrl: 'https://placehold.co/300x300.png?text=Song4' },
-  { id: '5', title: 'Hotel California', artist: 'Eagles', album: 'Hotel California', duration: '6:30', artworkUrl: 'https://placehold.co/300x300.png?text=Song5' },
-  { id: '6', title: ' Billie Jean', artist: 'Michael Jackson', album: 'Thriller', duration: '4:54', artworkUrl: 'https://placehold.co/300x300.png?text=Song6' },
+const mockArtists: Artist[] = [
+  { id: 'art_trap1', name: 'MC Cabelinho', genre: 'Trap/Funk', imageUrl: 'https://placehold.co/300x300.png?text=MC+Cabelinho', bio: 'MC Cabelinho é um fenômeno do trap e funk carioca, conhecido por suas letras autênticas e flow marcante.' },
+  { id: 'art_trap2', name: 'Matuê', genre: 'Trap', imageUrl: 'https://placehold.co/300x300.png?text=Matue', bio: 'Matuê é um dos pioneiros do trap no Brasil, famoso por hits como "Kenny G" e por sua produtora 30PRAUM.' },
+  { id: 'art_trap3', name: 'Alee', genre: 'Trap', imageUrl: 'https://placehold.co/300x300.png?text=Alee', bio: 'Alee ganhou destaque na cena com músicas como "Passado de um Vilão", mostrando um estilo único e letras reflexivas.' },
+  { id: 'art_trap4', name: 'Teto', genre: 'Trap', imageUrl: 'https://placehold.co/300x300.png?text=Teto', bio: 'Teto é um jovem talento do trap baiano, integrante da 30PRAUM, conhecido por sua energia e versatilidade.' },
+  { id: 'art_trap5', name: 'Veigh', genre: 'Trap', imageUrl: 'https://placehold.co/300x300.png?text=Veigh', bio: 'Veigh rapidamente se tornou um dos maiores nomes do trap nacional com seu álbum "Dos Prédios".' },
 ];
 
 const mockAlbums: Album[] = [
-  { id: 'alb1', title: 'Thriller', artist: 'Michael Jackson', artworkUrl: 'https://placehold.co/300x300.png?text=Album1', releaseDate: '1982-11-30', songs: mockSongs.filter(s => s.album === 'Thriller') },
-  { id: 'alb2', title: 'The Dark Side of the Moon', artist: 'Pink Floyd', artworkUrl: 'https://placehold.co/300x300.png?text=Album2', releaseDate: '1973-03-01', songs: [] },
-  { id: 'alb3', title: 'Abbey Road', artist: 'The Beatles', artworkUrl: 'https://placehold.co/300x300.png?text=Album3', releaseDate: '1969-09-26', songs: [] },
+  { id: 'alb_trap1', title: 'LITTLE HAIR', artist: 'MC Cabelinho', artistId: 'art_trap1', artworkUrl: 'https://placehold.co/300x300.png?text=LITTLE+HAIR', releaseDate: '2023-05-18', songs: [] },
+  { id: 'alb_trap2', title: 'Máquina do Tempo', artist: 'Matuê', artistId: 'art_trap2', artworkUrl: 'https://placehold.co/300x300.png?text=Maquina+Tempo', releaseDate: '2020-09-10', songs: [] },
+  { id: 'alb_trap3', title: 'Passado de um Vilão (Single)', artist: 'Alee', artistId: 'art_trap3', artworkUrl: 'https://placehold.co/300x300.png?text=Passado+Single', releaseDate: '2022-07-29', songs: [] },
+  { id: 'alb_trap4', title: 'previas.zip', artist: 'Teto', artistId: 'art_trap4', artworkUrl: 'https://placehold.co/300x300.png?text=previas.zip', releaseDate: '2021-03-05', songs: [] },
+  { id: 'alb_trap5', title: 'Dos Prédios Deluxe', artist: 'Veigh', artistId: 'art_trap5', artworkUrl: 'https://placehold.co/300x300.png?text=Dos+Predios+Deluxe', releaseDate: '2023-05-19', songs: [] },
 ];
 
-const mockArtists: Artist[] = [
-  { id: 'art1', name: 'Queen', genre: 'Rock', imageUrl: 'https://placehold.co/300x300.png?text=Artist1', bio: 'British rock band formed in London in 1970.' },
-  { id: 'art2', name: 'Ed Sheeran', genre: 'Pop', imageUrl: 'https://placehold.co/300x300.png?text=Artist2', bio: 'English singer-songwriter.' },
-  { id: 'art3', name: 'The Weeknd', genre: 'R&B/Pop', imageUrl: 'https://placehold.co/300x300.png?text=Artist3', bio: 'Canadian singer, songwriter, and record producer.' },
+const mockSongs: Song[] = [
+  { id: 'trap1', title: 'O Preço', artist: 'MC Cabelinho', artistId: 'art_trap1', album: 'LITTLE HAIR', albumId: 'alb_trap1', duration: '3:15', artworkUrl: 'https://placehold.co/300x300.png?text=O+Preco', lyrics: 'A vida é uma maravilha, Jacuzzi com hidromassagem\nNós tomando vinho branco ouvindo Jorge Ben Jor...' },
+  { id: 'trap2', title: 'Passado de um Vilão', artist: 'Alee', artistId: 'art_trap3', album: 'Passado de um Vilão (Single)', albumId: 'alb_trap3', duration: '2:50', artworkUrl: 'https://placehold.co/300x300.png?text=Passado+Vilao', lyrics: 'O passado de um vilão, eu juro, ninguém quer saber\nMas a glória de um herói, todos querem conhecer...' },
+  { id: 'trap3', title: 'Kenny G', artist: 'Matuê', artistId: 'art_trap2', album: 'Máquina do Tempo', albumId: 'alb_trap2', duration: '2:30', artworkUrl: 'https://placehold.co/300x300.png?text=Kenny+G', lyrics: 'Eu não sou o Kenny G, mas eu toco uma flauta\nSe ela quer vir pra cá, então prepara a pauta...' },
+  { id: 'trap4', title: 'M4 (feat. Matuê)', artist: 'Teto', artistId: 'art_trap4', album: 'previas.zip', albumId: 'alb_trap4', duration: '3:05', artworkUrl: 'https://placehold.co/300x300.png?text=M4', lyrics: 'M4 cantando no meu porte, ela gosta do meu malote\nGroupies querendo meu dote, yeah...' },
+  { id: 'trap5', title: 'Novo Balanço', artist: 'Veigh', artistId: 'art_trap5', album: 'Dos Prédios Deluxe', albumId: 'alb_trap5', duration: '2:58', artworkUrl: 'https://placehold.co/300x300.png?text=Novo+Balanco', lyrics: 'Aê, Nagalli, ele que fez o beat\nNovo balanço, nego, novo pique...' },
+  { id: 'trap6', title: 'Anos Luz', artist: 'Matuê', artistId: 'art_trap2', album: 'Máquina do Tempo', albumId: 'alb_trap2', duration: '3:01', artworkUrl: 'https://placehold.co/300x300.png?text=Anos+Luz', lyrics: 'Baby, eu tô a anos-luz de casa\nEu sei que eu errei, mas eu não vivo sem você...' },
+  { id: 'trap7', title: 'X1', artist: 'MC Cabelinho', artistId: 'art_trap1', album: 'LITTLE HAIR', albumId: 'alb_trap1', duration: '2:40', artworkUrl: 'https://placehold.co/300x300.png?text=X1', lyrics: 'Hoje eu tô à toa, fumando um balão\nCom meus amigos, contando milhão...' },
+  { id: 'trap8', title: 'Fim de Semana no Rio', artist: 'Teto', artistId: 'art_trap4', album: 'previas.zip', albumId: 'alb_trap4', duration: '2:55', artworkUrl: 'https://placehold.co/300x300.png?text=FDS+no+Rio', lyrics: 'Fim de semana no Rio, copo cheio, gelo e lean\nCom as bitch jogando o bundão, ouvindo meu som, sim...' },
+  { id: 'trap9', title: 'Vida Chique', artist: 'Veigh', artistId: 'art_trap5', album: 'Dos Prédios Deluxe', albumId: 'alb_trap5', duration: '3:10', artworkUrl: 'https://placehold.co/300x300.png?text=Vida+Chique', lyrics: 'Ayy, vida chique, meu mano, eu tô bem\nComprando o que eu quero, não devo a ninguém...' },
 ];
+
 
 // API Fetching Functions (Simulated)
 
-async function simulateFetch<T>(data: T, delay: number = 500): Promise<T> {
-  return new Promise(resolve => setTimeout(() => resolve(data), delay));
+async function simulateFetch<T>(data: T, delay: number = 200): Promise<T> {
+  return new Promise(resolve => setTimeout(() => resolve(JSON.parse(JSON.stringify(data))), delay)); // Deep copy to avoid mutation issues with shared mock data
 }
 
 export async function getFeaturedSongs(): Promise<Song[]> {
-  // In a real app: return fetch(`${API_BASE_URL}/featured-songs`).then(res => res.json());
   console.log(`Fetching featured songs from ${API_BASE_URL}/featured-songs (mocked)`);
   return simulateFetch(mockSongs.slice(0, 4));
 }
 
 export async function getFeaturedAlbums(): Promise<Album[]> {
-  // In a real app: return fetch(`${API_BASE_URL}/featured-albums`).then(res => res.json());
   console.log(`Fetching featured albums from ${API_BASE_URL}/featured-albums (mocked)`);
   return simulateFetch(mockAlbums.slice(0, 3));
 }
 
 export async function searchItems(query: string, type?: 'songs' | 'albums' | 'artists' | 'all'): Promise<SearchResults> {
-  // In a real app: return fetch(`${API_BASE_URL}/search?q=${query}&type=${type || 'all'}`).then(res => res.json());
   console.log(`Searching for "${query}" (type: ${type || 'all'}) from ${API_BASE_URL} (mocked)`);
   const lowerQuery = query.toLowerCase();
   const results: SearchResults = {
-    songs: mockSongs.filter(s => s.title.toLowerCase().includes(lowerQuery) || s.artist.toLowerCase().includes(lowerQuery)),
-    albums: mockAlbums.filter(a => a.title.toLowerCase().includes(lowerQuery) || a.artist.toLowerCase().includes(lowerQuery)),
-    artists: mockArtists.filter(ar => ar.name.toLowerCase().includes(lowerQuery)),
+    songs: mockSongs.filter(s => 
+      s.title.toLowerCase().includes(lowerQuery) || 
+      s.artist.toLowerCase().includes(lowerQuery) ||
+      s.album.toLowerCase().includes(lowerQuery)
+    ),
+    albums: mockAlbums.filter(a => 
+      a.title.toLowerCase().includes(lowerQuery) || 
+      a.artist.toLowerCase().includes(lowerQuery)
+    ),
+    artists: mockArtists.filter(ar => 
+      ar.name.toLowerCase().includes(lowerQuery) ||
+      ar.genre.toLowerCase().includes(lowerQuery)
+    ),
   };
   return simulateFetch(results);
 }
 
 export async function getSongById(id: string): Promise<Song | null> {
-  // In a real app: return fetch(`${API_BASE_URL}/songs/${id}`).then(res => res.json());
   console.log(`Fetching song ${id} from ${API_BASE_URL}/songs/${id} (mocked)`);
   const song = mockSongs.find(s => s.id === id) || null;
   return simulateFetch(song);
 }
 
 export async function getAlbumById(id: string): Promise<Album | null> {
-  // In a real app: return fetch(`${API_BASE_URL}/albums/${id}`).then(res => res.json());
   console.log(`Fetching album ${id} from ${API_BASE_URL}/albums/${id} (mocked)`);
-  const album = mockAlbums.find(a => a.id === id);
+  let album = mockAlbums.find(a => a.id === id);
   if (album) {
-    // Simulate fetching songs for the album if not already populated
-    album.songs = mockSongs.filter(s => s.album === album.title).slice(0,5); // Example: limit songs
+    album = JSON.parse(JSON.stringify(album)); // Deep copy
+    // Populate songs for the album
+    album.songs = mockSongs.filter(s => s.albumId === album!.id || s.album === album!.title);
   }
   return simulateFetch(album || null);
 }
 
 export async function getArtistById(id: string): Promise<Artist | null> {
-  // In a real app: return fetch(`${API_BASE_URL}/artists/${id}`).then(res => res.json());
   console.log(`Fetching artist ${id} from ${API_BASE_URL}/artists/${id} (mocked)`);
-  const artist = mockArtists.find(ar => ar.id === id);
+  let artist = mockArtists.find(ar => ar.id === id);
   if (artist) {
-    artist.topSongs = mockSongs.filter(s => s.artist === artist.name).slice(0,3);
-    artist.albums = mockAlbums.filter(al => al.artist === artist.name).slice(0,2);
+    artist = JSON.parse(JSON.stringify(artist)); // Deep copy
+    // Populate top songs and albums for the artist
+    artist.topSongs = mockSongs.filter(s => s.artistId === artist!.id || s.artist === artist!.name).slice(0, 4);
+    artist.albums = mockAlbums.filter(al => al.artistId === artist!.id || al.artist === artist!.name);
   }
   return simulateFetch(artist || null);
 }
 
 export async function getMultipleSongsByIds(ids: string[]): Promise<Song[]> {
-  // In a real app, this might be one or multiple API calls
   console.log(`Fetching multiple songs by IDs: ${ids.join(', ')} (mocked)`);
   const songs = mockSongs.filter(song => ids.includes(song.id));
   return simulateFetch(songs);
